@@ -1,0 +1,142 @@
+.section {
+  padding: 8rem 0;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.statusGroup {
+  display: flex;
+  gap: 15px;
+}
+
+.bit {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.mainTitle {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin-bottom: 5rem;
+  letter-spacing: -0.04em;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--secondary);
+}
+
+/* The Matrix Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1px;
+  background-color: var(--border); /* Creates hairline borders between cards */
+  border: 1px solid var(--border);
+}
+
+.serviceCard {
+  background-color: var(--bg);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: var(--transition);
+}
+
+.serviceCard:hover {
+  background-color: #080808;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.serviceCode {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--secondary);
+}
+
+.indicator {
+  width: 40px;
+  height: 2px;
+  background: var(--border);
+}
+
+.serviceCard:hover .indicator {
+  background: var(--secondary);
+  box-shadow: 0 0 10px var(--secondary);
+  width: 60px;
+}
+
+.serviceTitle {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.featureList {
+  list-style: none;
+  margin-top: auto;
+}
+
+.featureItem {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.plus {
+  color: var(--secondary);
+}
+
+.cardFooter {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.engine {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: #333;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
+  .serviceCard {
+    padding: 2rem;
+  }
+  .mainTitle {
+    margin-bottom: 3rem;
+  }
+}

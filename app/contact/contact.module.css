@@ -1,0 +1,249 @@
+.wrapper {
+  padding-top: 6rem;
+  padding-bottom: 10rem;
+  min-height: 90vh;
+}
+
+.header {
+  margin-bottom: 6rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 8rem;
+  border-top: 1px solid var(--border);
+  padding-top: 4rem;
+}
+
+/* Info Section */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--secondary);
+  margin-bottom: 1.5rem;
+}
+
+.val {
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  & a {
+    text-decoration: underline;
+    color: inherit;
+  }
+}
+
+.socialNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.socialLink {
+  text-decoration: none;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.socialLink:hover {
+  color: var(--secondary);
+  padding-left: 10px;
+}
+
+/* Form Section */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.input,
+.textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  color: var(--accent);
+  font-size: 1.2rem;
+  font-family: var(--font-main);
+  outline: none;
+  transition: var(--transition);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--secondary);
+}
+
+.submitBtn {
+  margin-top: 2rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 1.5rem 2rem;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.submitBtn:hover {
+  background: var(--secondary);
+  color: #fff;
+}
+
+.btnText {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.statusText {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
+
+  .info {
+    order: 2;
+  }
+}
+
+/* Success State UI */
+.statusDisplay {
+  padding: 4rem;
+  border: 1px solid var(--secondary);
+  background: rgba(168, 85, 247, 0.05);
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.successIcon {
+  font-size: 3rem;
+  color: #10b981;
+  margin-bottom: 2rem;
+}
+
+.statusTitle {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.statusMsg {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.resetBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--accent);
+  padding: 1rem 2rem;
+  font-family: var(--font-mono);
+  cursor: pointer;
+}
+
+/* Error Message */
+.errorMessage {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid #ef4444;
+  padding: 1rem;
+  color: #ef4444;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.errCode {
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+/* Button Pulse for Loading */
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--border);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styling the scanning effect on the button */
+.submitBtn {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: none;
+}
+
+.submitBtn:disabled .scanline {
+  animation: scan 1.5s infinite;
+}
+
+@keyframes scan {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}

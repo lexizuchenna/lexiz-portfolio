@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://lexiz.is-a.dev
+
+# Sitemaps
+Sitemap: https://lexiz.is-a.dev/sitemap.xml

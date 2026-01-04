@@ -1,0 +1,149 @@
+.container {
+  padding-bottom: 8rem;
+}
+
+/* Status Header */
+.statusHeader {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.statusInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.statusItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.val {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.activePulse {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activePulse::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+}
+
+/* Main Layout */
+.mainContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+.roleTitle {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 0.9;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.companyName {
+  font-family: var(--font-mono);
+  color: var(--secondary);
+  font-size: 1.2rem;
+  margin-bottom: 6rem;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 8rem;
+}
+
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  display: block;
+}
+
+.text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--accent);
+  margin-bottom: 4rem;
+}
+
+.achievementList {
+  list-style: none;
+}
+
+.achievementItem {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 15px;
+}
+
+.bullet {
+  color: var(--secondary);
+}
+
+/* Sidebar Specs */
+.specBox {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.stackGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stackTag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+}
+
+.smallText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .detailsGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .statusInner {
+    gap: 1.5rem;
+    overflow-x: hidden;
+  }
+}

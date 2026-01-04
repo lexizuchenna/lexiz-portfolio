@@ -1,0 +1,117 @@
+.wrapper {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  background-color: var(--bg);
+}
+
+/* Subtle background scanning effect */
+.scanner {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(255, 255, 255, 0.02) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+}
+
+.content {
+  max-width: 600px;
+  width: 100%;
+  border: 1px solid var(--border);
+  padding: 4rem;
+  background: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+}
+
+.errorCode {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #ef4444; /* Red for error */
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ef4444;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.message {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  font-family: var(--font-mono);
+}
+
+.cta {
+  text-decoration: none;
+  color: var(--secondary);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.cta:hover {
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.arrow {
+  opacity: 0.4;
+}
+
+.footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px dashed var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.barCode {
+  width: 60px;
+  height: 15px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--border),
+    var(--border) 2px,
+    transparent 2px,
+    transparent 5px
+  );
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .content {
+    padding: 2rem;
+  }
+  .title {
+    font-size: 1.8rem;
+  }
+}

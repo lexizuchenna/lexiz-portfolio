@@ -1,0 +1,156 @@
+.siteNav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navInner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+  z-index: 1100;
+}
+
+.navLinks {
+  display: flex;
+  gap: 3rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+
+.navLinks a.active,
+.navLinks a:hover {
+  color: var(--accent);
+}
+
+/* Mobile Toggle Button */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  padding: 10px;
+}
+
+.line {
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+/* Mobile Drawer */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 400px;
+  height: 100vh;
+  background: #050505;
+  border-left: 1px solid var(--border);
+  z-index: 1050;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawerOpen {
+  transform: translateX(-100%);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.mobileLink {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.linkNum {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--secondary);
+}
+
+.drawerFooter {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1040;
+}
+
+/* Status Dot in Header/Drawer */
+.navStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+}
+
+/* Toggle Animations */
+.line1Open {
+  transform: translateY(3.5px) rotate(45deg);
+}
+.line2Open {
+  transform: translateY(-3.5px) rotate(-45deg);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+  .menuToggle {
+    display: flex;
+  }
+  .navInner .navStatus {
+    display: none;
+  }
+}
