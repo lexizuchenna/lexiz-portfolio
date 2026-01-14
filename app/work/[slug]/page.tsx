@@ -72,6 +72,25 @@ export default async function WorkDetail({
             <span className={styles.metaLabel}>Deployment_Cycle</span>
             <span className={styles.metaValue}>{data.timeline}</span>
           </div>
+          {data.repo && (
+            <div className={styles.metaBlock}>
+              <span className={styles.metaLabel}>View on Github</span>
+              <a
+                href={data.repo}
+                style={{
+                  textDecorationColor: "var(--accent)",
+                }}
+              >
+                <span
+                  style={{
+                    color: "var(--accent)",
+                  }}
+                >
+                  {data.repo}
+                </span>
+              </a>
+            </div>
+          )}
         </aside>
 
         {/* Narrative Content */}

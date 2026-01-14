@@ -38,6 +38,7 @@ declare global {
     summary: string;
     deepDive: string;
     client: string;
+    repo?: string;
   }
 
   interface Service {
