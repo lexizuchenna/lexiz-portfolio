@@ -28,7 +28,7 @@ declare global {
     title: string;
     category: string;
     description: string;
-    image: string;
+    image?: string;
     link: string;
     slug: string;
     year: string;

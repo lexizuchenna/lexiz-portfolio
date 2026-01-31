@@ -1,5 +1,30 @@
 const projects: Array<Project> = [
   {
+    id: "PRJ-05",
+    title: "Mastra Fitness Agent",
+    category: "AI Agent",
+    description:
+      "A robust AI-driven fitness assistant that delivers personalized workout plans, nutrition guidance, and motivational insights through a scalable, agent-based workflow and API.",
+    client: "",
+    link: "https://github.com/lexizuchenna/hng-server-3",
+    slug: "mastra-fitness-agent",
+    year: "2025",
+    role: "Backend / AI Engineer",
+    stack: [
+      "TypeScript",
+      "Mastra",
+      "Google Gemini 2.0 Flash",
+      "LibSQL (SQLite)",
+      "JSON-RPC",
+    ],
+    timeline: "1 weeks",
+    summary:
+      "An advanced Mastra-powered AI fitness assistant built to generate highly personalized workout routines, nutritional advice, and motivational summaries. The system leverages structured agent workflows and exposes a JSON-RPC 2.0 compliant Agent-to-Agent (A2A) API, enabling seamless integration with external platforms such as Telex and other automation tools.",
+    deepDive:
+      "Mastra Fitness Agent is an intelligent, modular fitness workflow engineered using Mastra Agents, Tools, and Workflows to deliver consistent and context-aware fitness guidance.\n\nAt the core of the system is a dedicated Fitness Agent that interprets user goals, experience levels, and intent, dynamically invoking a specialized fitnessTool to generate structured workout plans. These plans include warm-up routines, main training sessions, cool-down stretches, tailored nutrition tips, and motivational messages.\n\nA fitnessWorkflow layer refines and summarizes the generated output to ensure clarity, readability, and actionable guidance. Persistent memory is implemented using LibSQL (SQLite), allowing the agent to maintain context across interactions and support more coherent, stateful conversations.\n\nThe project exposes a fully JSON-RPC 2.0 compliant A2A (Agent-to-Agent) endpoint, designed for interoperability with external applications, bots, and automation platforms such as Telex and Zapier. Its clean, modular architecture promotes extensibility, maintainability, and seamless scaling of additional agents, tools, and workflows as the system evolves.",
+    repo: "https://github.com/lexizuchenna/hng-server-3",
+  },
+  {
     id: "PRJ-01",
     title: "Solid Living Support",
     category: "Corporate Website",
@@ -63,7 +88,6 @@ const projects: Array<Project> = [
     category: "Mobile App",
     description:
       "A react native App that displays list of crypto currencies with a description page",
-    image: "/images/cryptowallet.png",
     client: "",
     link: "https://github.com/lexizuchenna/hng-mobile-4/releases/tag/v1.0.0",
     slug: "hng-auth-sdk",

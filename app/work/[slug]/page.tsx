@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import Error from "@/components/error/error";
 import styles from "./work-detail.module.css";
 import { projects } from "@/constants";
+import { generateProjectImage } from "@/utils/generate-image";
 
 const getProjectData = (slug: string) => {
   const project = projects.find((pr) => pr.slug === slug);
@@ -101,8 +102,9 @@ export default async function WorkDetail({
           </section>
 
           <div className={styles.largeImage}>
+            {/* {data.image ? ( */}
             <Image
-              src={data.image}
+              src={data.image ?? generateProjectImage(data)}
               alt="Interface Screenshot"
               width={1200}
               height={700}

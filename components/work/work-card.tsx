@@ -1,3 +1,4 @@
+import { generateProjectImage } from "@/utils/generate-image";
 import styles from "./work.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +8,7 @@ export default function WorkCard({ project }: { project: Project }) {
     <div key={project.id} className={styles.projectRow}>
       <div className={styles.imageContainer}>
         <Image
-          src={project.image}
+          src={project.image ?? generateProjectImage(project)}
           alt={project.title}
           fill
           className={styles.projectImg}
