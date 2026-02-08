@@ -1,6 +1,6 @@
 const projects: Array<Project> = [
   {
-    id: "PRJ-05",
+    id: "PRJ-01",
     title: "Mastra Fitness Agent",
     category: "AI Agent",
     description:
@@ -25,42 +25,23 @@ const projects: Array<Project> = [
     repo: "https://github.com/lexizuchenna/hng-server-3",
   },
   {
-    id: "PRJ-01",
-    title: "Solid Living Support",
-    category: "Corporate Website",
-    description:
-      "A professional web platform designed to showcase care and support services with clarity, accessibility, and trust.",
-    image: "/images/solidlivingsupport.png",
-    client: "Solid Living Support",
-    link: "https://solidlivingltd.co.uk/",
-    slug: "solid-living-support",
-    year: "2025",
-    role: "Fullstack Developer",
-    stack: ["Next.js", "React"],
-    timeline: "1 Month",
-    summary:
-      "A modern, responsive website built to represent a support service provider, focusing on clear service presentation, accessibility, and a polished user experience.",
-    deepDive:
-      "This project involved designing and developing a clean, user-friendly web presence tailored for a care and support organization.\n\nThe application was built with Next.js and React to ensure fast load times, SEO friendliness, and smooth navigation across devices.\n\nEmphasis was placed on accessibility, content clarity, and maintainable code structure, resulting in a scalable platform that effectively communicates the organisation’s services and values.",
-  },
-  {
     id: "PRJ-02",
-    title: "Freshview Cleaning Service",
-    category: "Business Website",
+    title: "InkFlow",
+    category: "Fullstack web application",
     description:
-      "A sleek business website built to promote professional cleaning services and drive customer engagement.",
-    image: "/images/freshview.png",
+      "A TypeScript-based content publishing API built with Next.js, Prisma, and PostgreSQL, providing secure authentication, rich editorial workflows, media uploads, analytics, and high-performance content delivery for modern publishing platforms.",
     client: "",
-    link: "https://freshviewltd.co.uk",
-    slug: "freshview-services",
-    year: "2025",
-    role: "Fullstack Developer",
-    stack: ["Next.js", "React"],
-    timeline: "1 Month",
+    link: "https://inkflow.vercel.app",
+    slug: "inkflow",
+    year: "2026",
+    role: "Fullstack dev",
+    stack: ["TypeScript", "Prisma", "NextJS", "Tanstack"],
+    timeline: "1 weeks",
     summary:
-      "A responsive marketing website developed for a cleaning service company, focused on service visibility, brand credibility, and lead generation.",
+      "InkFlow is a production-grade content publishing API designed to power modern editorial platforms at scale. Built on a TypeScript-first Node.js stack with Next.js 15 and Prisma, it supports complex publishing workflows, secure authentication, rich content creation, and high-performance content delivery. The API seamlessly integrates authentication (Clerk), file storage (Supabase), rich-text editing (Tiptap), and real-time user synchronization (Svix), making it well-suited for writer-centric platforms, digital magazines, and analytics-driven publishing products. Its structured endpoints enable everything from story discovery and filtering to author analytics, media uploads, and webhook-driven identity management.",
     deepDive:
-      "Freshview Cleaning Service was developed as a modern business website aimed at clearly presenting services and strengthening online presence.\n\nUsing Next.js and React, the project delivers fast performance, responsive layouts, and a smooth browsing experience across all devices.\n\nThe build prioritised clean UI design, simple navigation, and scalable architecture, making it easy to update content and expand features as the business grows.",
+      "InkFlow’s architecture is intentionally designed around scalability, strict typing, and editorial reliability. At its core, Prisma provides a strongly typed data layer over PostgreSQL, modeling key publishing entities such as users, stories, series, earnings, and payments. This ensures data integrity across complex relationships like authorship, monetization, and reader engagement metrics. By enforcing typed schemas and predictable migrations, the API minimizes runtime errors while enabling rapid feature expansion.\nAuthentication and authorization are handled through Clerk, offering secure session management for both writers and readers. This allows the API to enforce fine-grained access control across protected routes, such as author-only story management and personalized analytics endpoints. Clerk webhooks, verified using Svix, keep user data synchronized in real time, ensuring consistency between the identity provider and InkFlow’s internal database.\nContent creation and management are central to InkFlow’s design. The API supports rich HTML content generated via the Tiptap editor, enabling editorial-grade formatting and extensibility. Media handling is delegated to Supabase Storage, allowing writers to upload high-resolution images efficiently while keeping the API lightweight and performant. Endpoints for story creation, updates, publishing states, and deletion are structured to reflect real editorial workflows, including drafts, publishing, archiving, and ownership validation.\nOn the consumption side, InkFlow provides flexible story discovery through filtering, sorting, pagination, and time-based queries. This enables frontend applications to build responsive feeds such as “most viewed this week” or topic-based browsing experiences. Additional endpoints expose author-centric analytics—total reads, revenue, and engagement metrics—supporting monetization insights and performance tracking.\nOverall, InkFlow functions not just as a CRUD API, but as a cohesive editorial engine. Its combination of modern tooling, security-first design, and workflow-aware endpoints makes it a strong foundation for professional publishing platforms that demand reliability, extensibility, and developer ergonomics.",
+    repo: "https://github.com/lexizuchenna/inkflow",
   },
   {
     id: "PRJ-03",
@@ -100,6 +81,44 @@ const projects: Array<Project> = [
     deepDive:
       "A sleek and responsive mobile application developed with React Native and Expo, focused on delivering real-time cryptocurrency market insights through an intuitive and user-friendly interface.\n\nThe application integrates with the CoinGecko API to fetch live pricing data, ensuring accurate and up-to-date information on a wide range of cryptocurrencies.\n\nCore features include real-time price tracking, market trend visualization, and the ability to manage a personalized list of favorite coins for quick access.\n\nThe project emphasizes performance, clean UI design, and efficient data handling, resulting in a smooth experience even with frequent data updates and dynamic market changes.",
     repo: "https://github.com/lexizuchenna/hng-mobile-4",
+  },
+  {
+    id: "PRJ-05",
+    title: "Solid Living Support",
+    category: "Corporate Website",
+    description:
+      "A professional web platform designed to showcase care and support services with clarity, accessibility, and trust.",
+    image: "/images/solidlivingsupport.png",
+    client: "Solid Living Support",
+    link: "https://solidlivingltd.co.uk/",
+    slug: "solid-living-support",
+    year: "2025",
+    role: "Fullstack Developer",
+    stack: ["Next.js", "React"],
+    timeline: "1 Month",
+    summary:
+      "A modern, responsive website built to represent a support service provider, focusing on clear service presentation, accessibility, and a polished user experience.",
+    deepDive:
+      "This project involved designing and developing a clean, user-friendly web presence tailored for a care and support organization.\n\nThe application was built with Next.js and React to ensure fast load times, SEO friendliness, and smooth navigation across devices.\n\nEmphasis was placed on accessibility, content clarity, and maintainable code structure, resulting in a scalable platform that effectively communicates the organisation’s services and values.",
+  },
+  {
+    id: "PRJ-06",
+    title: "Freshview Cleaning Service",
+    category: "Business Website",
+    description:
+      "A sleek business website built to promote professional cleaning services and drive customer engagement.",
+    image: "/images/freshview.png",
+    client: "",
+    link: "https://freshviewltd.co.uk",
+    slug: "freshview-services",
+    year: "2025",
+    role: "Fullstack Developer",
+    stack: ["Next.js", "React"],
+    timeline: "1 Month",
+    summary:
+      "A responsive marketing website developed for a cleaning service company, focused on service visibility, brand credibility, and lead generation.",
+    deepDive:
+      "Freshview Cleaning Service was developed as a modern business website aimed at clearly presenting services and strengthening online presence.\n\nUsing Next.js and React, the project delivers fast performance, responsive layouts, and a smooth browsing experience across all devices.\n\nThe build prioritised clean UI design, simple navigation, and scalable architecture, making it easy to update content and expand features as the business grows.",
   },
 ];
 
