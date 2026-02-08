@@ -37,6 +37,7 @@ const projects: Array<Project> = [
     role: "Fullstack dev",
     stack: ["TypeScript", "Prisma", "NextJS", "Tanstack"],
     timeline: "1 weeks",
+    image: "/images/projects/inkflow.png",
     summary:
       "InkFlow is a production-grade content publishing API designed to power modern editorial platforms at scale. Built on a TypeScript-first Node.js stack with Next.js 15 and Prisma, it supports complex publishing workflows, secure authentication, rich content creation, and high-performance content delivery. The API seamlessly integrates authentication (Clerk), file storage (Supabase), rich-text editing (Tiptap), and real-time user synchronization (Svix), making it well-suited for writer-centric platforms, digital magazines, and analytics-driven publishing products. Its structured endpoints enable everything from story discovery and filtering to author analytics, media uploads, and webhook-driven identity management.",
     deepDive:
