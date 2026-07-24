@@ -1,6 +1,58 @@
 const projects: Array<Project> = [
   {
-    id: "PRJ-01",
+    title: "Apex Learn",
+    category: "Mobile / EdTech Platform",
+    description:
+      "A cross-platform educational application enabling instructors to build structured learning paths, draft interactive quizzes with real-time auto-save, and deliver rich multimedia lessons.",
+    client: "",
+    link: "https://github.com/lexizuchenna",
+    slug: "apex-learn",
+    year: "2026",
+    role: "Lead Mobile Developer",
+    stack: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "MMKV Storage",
+      "Zustand",
+      "Google Cloud OAuth",
+      "Stream Chat/Call",
+    ],
+    timeline: "3 weeks",
+    summary:
+      "Apex Learn is a mobile EdTech platform designed to streamline classroom management and course publishing for educators. Built on React Native and Expo, the application features an offline-first quiz builder, rich-text lesson editing, debounced draft persistence, and secure authentication, providing a seamless user experience across iOS and Android.",
+    deepDive:
+      "Apex Learn is engineered as a mobile-first solution for course creation and student engagement. At the core of the instructor workspace is a dynamic Quiz & Assessment Builder powered by a custom Zustand store (`useQuizStore`) and `react-native-mmkv-storage`.\n\nTo ensure zero data loss while composing lengthy quizzes, a custom debounced auto-save strategy persists user progress to MMKV using unique `content_id` keys, allowing seamless restoration across sessions. To resolve complex mobile UX bottlenecks, nested gesture conflicts between native `ScrollView` components and WebView-based Rich Text Editors were solved by injecting touch event propagation controls directly into the web view layer.\n\nThe UI architecture adheres to custom design tokens, modular bottom sheet patterns, and responsive layout structures. For security and user management, the app integrates Google OAuth using PKCE and Web Client IDs, synchronized with Google Play App Signing SHA-1 fingerprints for production-grade authentication.",
+    repo: "https://github.com/lexizuchenna",
+  },
+  {
+    title: "Apex Masterclass",
+    category: "Web / EdTech & Event Platform",
+    description:
+      "A full-stack masterclass and event ticket management platform featuring automated payment verification, dynamic digital passes with QR check-in capabilities, and certificate generation.",
+    client: "Apex Thinkers",
+    link: "https://masterclass.apexthinkers.org",
+    slug: "apex-masterclass",
+    year: "2026",
+    role: "Lead Full-Stack Developer",
+    stack: [
+      "Next.js (App Router)",
+      "TypeScript",
+      "Tailwind CSS",
+      "Prisma ORM",
+      "Flutterwave API",
+      "Puppeteer",
+      "jsPDF / html2canvas",
+    ],
+    timeline: "4 weeks",
+    summary:
+      "Apex Masterclass is an end-to-end event management and digital admission platform built for high-impact masterclasses. Powered by Next.js and Prisma, the platform delivers secure tier-based ticket purchases, automated Flutterwave payment verification, real-time ticket generation with QR validation, and automated certificate dispatch.",
+    deepDive:
+      "Apex Masterclass is designed to handle high-concurrency event registration and automated gate operations. The system features an imperative modal workflow for ticket acquisition and inspection, paired with a payment flow integrated with Flutterwave that verifies transactions using unique transaction references (`tx_ref`).\n\nUpon successful verification, the platform auto-generates digital tickets embedded with unique QR codes (`a_id` and `e_id`) for physical and virtual check-in verification via an internal `/verify` portal. For offline utility, attendees can export print-ready PDF passes created through an `html2canvas` and `jsPDF` render workflow.\n\nFor administrators, the platform includes dynamic ticket seat allocation tracking across Basic, Premium, and VIP tiers. To streamline post-event delivery, an automated certificate dispatch engine uses `puppeteer-core` and `@sparticuz/chromium` to generate personalized PDF certificates, complete with custom external package configurations in Next.js to eliminate process memory leaks on serverless AWS deployments.",
+    repo: "https://github.com/lexizuchenna",
+    image: "/images/projects/masterclass.png",
+  },
+  {
     title: "Mastra Fitness Agent",
     category: "AI Agent",
     description:
@@ -25,7 +77,6 @@ const projects: Array<Project> = [
     repo: "https://github.com/lexizuchenna/hng-server-3",
   },
   {
-    id: "PRJ-02",
     title: "InkFlow",
     category: "Fullstack web application",
     description:
@@ -45,7 +96,6 @@ const projects: Array<Project> = [
     repo: "https://github.com/lexizuchenna/inkflow",
   },
   {
-    id: "PRJ-03",
     title: "Firebase Auth SDK",
     category: "Mobile SDK",
     description:
@@ -65,7 +115,6 @@ const projects: Array<Project> = [
     repo: "https://github.com/lexizuchenna/AuthSdk",
   },
   {
-    id: "PRJ-04",
     title: "Crypto Wallet",
     category: "Mobile App",
     description:
@@ -84,7 +133,6 @@ const projects: Array<Project> = [
     repo: "https://github.com/lexizuchenna/hng-mobile-4",
   },
   {
-    id: "PRJ-05",
     title: "Solid Living Support",
     category: "Corporate Website",
     description:
@@ -103,7 +151,6 @@ const projects: Array<Project> = [
       "This project involved designing and developing a clean, user-friendly web presence tailored for a care and support organization.\n\nThe application was built with Next.js and React to ensure fast load times, SEO friendliness, and smooth navigation across devices.\n\nEmphasis was placed on accessibility, content clarity, and maintainable code structure, resulting in a scalable platform that effectively communicates the organisation’s services and values.",
   },
   {
-    id: "PRJ-06",
     title: "Freshview Cleaning Service",
     category: "Business Website",
     description:

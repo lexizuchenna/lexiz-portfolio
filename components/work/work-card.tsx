@@ -3,9 +3,15 @@ import styles from "./work.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function WorkCard({ project }: { project: Project }) {
+export default function WorkCard({
+  project,
+  index,
+}: {
+  project: Project;
+  index: number;
+}) {
   return (
-    <div key={project.id} className={styles.projectRow}>
+    <div className={styles.projectRow}>
       <div className={styles.imageContainer}>
         <Image
           src={project.image ?? generateProjectImage(project)}
@@ -18,7 +24,7 @@ export default function WorkCard({ project }: { project: Project }) {
 
       <div className={styles.contentContainer}>
         <div className={styles.meta}>
-          <span className={styles.id}>{project.id}</span>
+          <span className={styles.id}>{`PRJ-${index + 1}`}</span>
           <span className={styles.year}>{project.year}</span>
         </div>
 

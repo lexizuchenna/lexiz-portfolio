@@ -11,7 +11,9 @@ const getProjectData = (slug: string) => {
 
   if (!project) return null;
 
-  return project;
+  const index = projects.findIndex((pr) => pr.slug === slug) + 1;
+
+  return { ...project, index };
 };
 
 export async function generateMetadata({
@@ -48,7 +50,9 @@ export default async function WorkDetail({
     <article className={styles.container}>
       <header className={styles.hero}>
         <div className={styles.heroContent}>
-          <span className="mono-label">Project_Report // {data.id}</span>
+          <span className="mono-label">
+            Project_Report // {`PRJ-${data.index + 1}`}
+          </span>
           <h1 className={styles.title}>{data.title}</h1>
         </div>
       </header>

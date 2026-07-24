@@ -18,7 +18,7 @@ export default function WorksPage() {
 
       <section className={styles.gridSection}>
         {projects.map((project, index) => (
-          <WorkCard project={project} key={index} />
+          <WorkCard project={project} key={`PRJ-${index + 1}`} index={index} />
         ))}
       </section>
     </div>
