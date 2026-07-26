@@ -64,6 +64,7 @@ type GenerateErrorEmailProps = {
   // Time
   // ========================
   timestamp: string;
+  code: string;
 };
 
 const row = (label: string, value?: string | number | boolean | null) => `
@@ -198,6 +199,7 @@ ${row("Error Name", data.errorName)}
 ${row("Error Message", data.errorMessage)}
 ${row("Fatal Error", data.isFatal)}
 ${row("Timestamp", data.timestamp)}
+${row("Code", data.code)}
 
 </table>
 

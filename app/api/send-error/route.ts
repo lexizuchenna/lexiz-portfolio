@@ -106,6 +106,7 @@ export async function POST(req: NextRequest) {
       // Time
       // ======================
       timestamp,
+      code,
     } = body;
 
     console.log(body);
@@ -175,6 +176,7 @@ export async function POST(req: NextRequest) {
         previousScreen,
 
         timestamp,
+        code,
       }),
     };
 
