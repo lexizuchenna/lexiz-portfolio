@@ -24,7 +24,9 @@ export default function WorkCard({
 
       <div className={styles.contentContainer}>
         <div className={styles.meta}>
-          <span className={styles.id}>{`PRJ-${index + 1}`}</span>
+          <span
+            className={styles.id}
+          >{`PRJ-${index.toString().length < 2 && "0"}${index + 1}`}</span>
           <span className={styles.year}>{project.year}</span>
         </div>
 

@@ -1,11 +1,12 @@
 /** @type {import('next-sitemap').IConfig} */
 
+const fs = require("fs");
+const path = require("path");
+
 module.exports = {
   siteUrl: "https://lexiz.is-a.dev",
   generateRobotsTxt: true,
   sitemapSize: 7000,
-  changefreq: "weekly",
-  priority: 0.7,
   robotsTxtOptions: {
     policies: [
       {
@@ -16,20 +17,39 @@ module.exports = {
   },
 
   additionalPaths: async (config) => {
-    // ✅ Generate paths for static pages
+    const careers = fs.existsSync(path.join(process.cwd(), "data/careers.json"))
+      ? JSON.parse(
+          fs.readFileSync(
+            path.join(process.cwd(), "data/careers.json"),
+            "utf-8",
+          ),
+        )
+      : [];
+    const projects = fs.existsSync(
+      path.join(process.cwd(), "data/projects.json"),
+    )
+      ? JSON.parse(
+          fs.readFileSync(
+            path.join(process.cwd(), "data/projects.json"),
+            "utf-8",
+          ),
+        )
+      : [];
+
     const staticPaths = [
       await config.transform(config, "/"),
       await config.transform(config, "/work"),
       await config.transform(config, "/contact"),
     ];
 
-    // ✅ Add blog post pages
-    // const blogPaths = await Promise.all(
-    //   apartments.map((item) =>
-    //     config.transform(config, `/properties/${item.slug}`)
-    //   )
-    // );
+    const career = await Promise.all(
+      careers.map((item) => config.transform(config, `/career/${item.slug}`)),
+    );
 
-    return [...staticPaths];
+    const project = await Promise.all(
+      projects.map((item) => config.transform(config, `/work/${item.slug}`)),
+    );
+
+    return [...staticPaths, ...career, ...project];
   },
 };

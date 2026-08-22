@@ -3,7 +3,7 @@ import { Metadata } from "next";
 
 import Error from "@/components/error/error";
 import styles from "./work-detail.module.css";
-import { projects } from "@/constants";
+import projects from "@/data/projects.json";
 import { generateProjectImage } from "@/utils/generate-image";
 
 const getProjectData = (slug: string) => {
@@ -51,7 +51,7 @@ export default async function WorkDetail({
       <header className={styles.hero}>
         <div className={styles.heroContent}>
           <span className="mono-label">
-            Project_Report // {`PRJ-${data.index + 1}`}
+            Project_Report // {`PRJ-${data.index}`}
           </span>
           <h1 className={styles.title}>{data.title}</h1>
         </div>
@@ -85,6 +85,7 @@ export default async function WorkDetail({
                 style={{
                   textDecorationColor: "var(--accent)",
                 }}
+                target="_blank"
               >
                 <span
                   style={{
@@ -92,6 +93,27 @@ export default async function WorkDetail({
                   }}
                 >
                   {data.repo}
+                </span>
+              </a>
+            </div>
+          )}
+
+          {data.link && (
+            <div className={styles.metaBlock}>
+              <span className={styles.metaLabel}>View Live Deployment</span>
+              <a
+                href={data.link}
+                style={{
+                  textDecorationColor: "var(--accent)",
+                }}
+                target="_blank"
+              >
+                <span
+                  style={{
+                    color: "var(--accent)",
+                  }}
+                >
+                  {data.link}
                 </span>
               </a>
             </div>

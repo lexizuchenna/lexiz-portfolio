@@ -9,7 +9,6 @@ declare global {
   }
 
   interface Career {
-    id: string;
     role: string;
     company: string;
     industry: string;
@@ -24,7 +23,6 @@ declare global {
   }
 
   interface Project {
-    // id: string;
     title: string;
     category: string;
     description: string;

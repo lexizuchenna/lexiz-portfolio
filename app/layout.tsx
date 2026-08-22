@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
 import { Footer, Header } from "@/components/layout";
+//@ts-ignore
 import "@/styles/style.css";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   ),
   title: {
     default: "Alexander Ukwueze | Full-Stack Engineer",
@@ -71,18 +71,6 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
-        <Script>
-          {`function initFreshdesk() {
-              window.fdWidget.init({
-                token: "01KR9JTRBBSR3GZCE6XEMC4RR4",
-                host: "https://leokarl641.freshdesk.com",
-                widgetId: "01KR9JTV746V0ZBMA051S4D0CX"
-              });
-            }
-
-          function initialize(i,t){var e;i.getElementById(t)?initFreshdesk():((e=i.createElement("script")).id=t,e.async=!0,e.src="https://leokarl641.freshdesk.com/webchat/js/widget.js",e.onload=initFreshdesk,i.head.appendChild(e))}function initiateCall(){initialize(document,"Freshdesk-js-sdk")}window.addEventListener?window.addEventListener("load",initiateCall,!1):window.attachEvent("load",initiateCall,!1);
-        `}
-        </Script>
       </body>
     </html>
   );

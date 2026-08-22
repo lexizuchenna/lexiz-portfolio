@@ -1,7 +1,8 @@
 import Link from "next/link";
 import styles from "./career.module.css";
 
-import { careers } from "@/constants";
+import careers from "@/data/careers.json";
+import { randomUUID } from "crypto";
 
 export default function Career() {
   return (
@@ -23,12 +24,15 @@ export default function Career() {
         <div className={styles.blueprintGrid}>
           {careers.map((item, index) => (
             <Link
-              key={item.id}
+              key={randomUUID()}
               href={`/career/${item.slug}`}
               className={styles.module}
             >
               <div className={styles.moduleCorner}>
-                <span className={styles.coord}>0{index + 1}</span>
+                <span className={styles.coord}>
+                  {index.toString().length < 2 && "0"}
+                  {index + 1}
+                </span>
                 {item.isActive && (
                   <span className={styles.liveTag}>LIVE_ENV</span>
                 )}

@@ -1,6 +1,8 @@
+import { randomUUID } from "crypto";
+
 import styles from "../work/work.module.css";
 import { WorkCard } from "../work";
-import { projects } from "@/constants";
+import projects from "@/data/projects.json";
 
 export default function WorksPage() {
   return (
@@ -18,7 +20,7 @@ export default function WorksPage() {
 
       <section className={styles.gridSection}>
         {projects.map((project, index) => (
-          <WorkCard project={project} key={`PRJ-${index + 1}`} index={index} />
+          <WorkCard project={project} key={randomUUID()} index={index} />
         ))}
       </section>
     </div>
