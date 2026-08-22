@@ -2,9 +2,10 @@ import Link from "next/link";
 import styles from "./career.module.css";
 
 import careers from "@/data/careers.json";
-import { randomUUID } from "crypto";
 
-export default function Career() {
+export default function Career({ preview = false }: { preview?: boolean }) {
+  const visibleCareers = preview ? careers.slice(0, 3) : careers;
+
   return (
     <section className="section" aria-labelledby="career-heading">
       <div className="container">
@@ -22,9 +23,9 @@ export default function Career() {
         </div>
 
         <div className={styles.blueprintGrid}>
-          {careers.map((item, index) => (
+          {visibleCareers.map((item, index) => (
             <Link
-              key={randomUUID()}
+              key={item.slug}
               href={`/career/${item.slug}`}
               className={styles.module}
             >
@@ -61,6 +62,14 @@ export default function Career() {
             </Link>
           ))}
         </div>
+
+        {preview && (
+          <div className={styles.viewMoreRow}>
+            <Link href="/career" className={styles.viewMore}>
+              VIEW_ALL_CAREERS <span>→</span>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

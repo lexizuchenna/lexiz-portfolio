@@ -136,6 +136,33 @@
   letter-spacing: 1px;
 }
 
+.viewMoreRow {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+}
+
+.viewMore {
+  color: var(--accent);
+  border-bottom: 1px solid var(--secondary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  padding: 0.75rem 0;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.viewMore span {
+  color: var(--secondary);
+  margin-left: 0.75rem;
+}
+
+.viewMore:hover {
+  color: var(--secondary);
+  padding-right: 0.5rem;
+}
+
 .module:hover .action {
   color: var(--secondary);
 }

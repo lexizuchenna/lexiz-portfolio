@@ -1,5 +1,6 @@
 import { Career, Hero, Services, TechStack } from "@/components/home";
 import WorksPage from "@/components/home/work";
+import Testimonials from "@/components/home/testimonials";
 
 export const metadata = {
   title: "Home | Software Architecture & Development",
@@ -12,9 +13,10 @@ export default function Page() {
     <div className="main-container">
       <Hero />
       <TechStack />
-      <Career />
+      <Career preview />
       <Services />
-      <WorksPage />
+      <Testimonials />
+      <WorksPage preview />
     </div>
   );
 }

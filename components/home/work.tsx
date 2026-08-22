@@ -1,10 +1,13 @@
-import { randomUUID } from "crypto";
-
 import styles from "../work/work.module.css";
 import { WorkCard } from "../work";
 import projects from "@/data/projects.json";
+import Link from "next/link";
 
-export default function WorksPage() {
+export default function WorksPage({ preview = false }: { preview?: boolean }) {
+  const visibleProjects = preview
+    ? projects.filter((project) => project.featured).slice(0, 4)
+    : projects;
+
   return (
     <div className="section">
       <header className={styles.header}>
@@ -19,10 +22,18 @@ export default function WorksPage() {
       </header>
 
       <section className={styles.gridSection}>
-        {projects.map((project, index) => (
-          <WorkCard project={project} key={randomUUID()} index={index} />
+        {visibleProjects.map((project, index) => (
+          <WorkCard project={project} key={`${project.slug}-${index}`} index={index} />
         ))}
       </section>
+
+      {preview && (
+        <div className={styles.viewMoreRow}>
+          <Link href="/work" className={styles.viewMore}>
+            VIEW_ALL_WORKS <span>→</span>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

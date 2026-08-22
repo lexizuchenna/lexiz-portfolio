@@ -1,0 +1,106 @@
+.header {
+  margin-bottom: 4rem;
+}
+
+.carousel {
+  position: relative;
+  min-height: 360px;
+  padding: 3rem clamp(1.5rem, 6vw, 6rem);
+  border: 1px solid var(--border);
+  background: linear-gradient(120deg, var(--panel), #020202);
+}
+
+.index {
+  color: var(--secondary);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.review {
+  max-width: 850px;
+  margin: 2.5rem 0 2rem;
+  font-size: clamp(1.5rem, 3vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  border: 1px solid var(--border);
+  filter: grayscale(1);
+  object-fit: cover;
+}
+
+.name {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.meta {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  margin-top: 0.25rem;
+  text-transform: uppercase;
+}
+
+.controls {
+  position: absolute;
+  right: clamp(1.5rem, 6vw, 6rem);
+  bottom: 3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.arrow,
+.dot {
+  border: 0;
+  cursor: pointer;
+}
+
+.arrow {
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.arrow:hover {
+  color: var(--secondary);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.dot {
+  width: 22px;
+  height: 2px;
+  background: var(--border);
+}
+
+.activeDot {
+  background: var(--secondary);
+}
+
+@media (max-width: 640px) {
+  .carousel {
+    min-height: 460px;
+  }
+
+  .controls {
+    left: 1.5rem;
+    right: auto;
+    bottom: 2rem;
+  }
+}

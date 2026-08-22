@@ -30,6 +30,7 @@ declare global {
     link: string;
     slug: string;
     year: string;
+    featured?: boolean;
     role: string;
     stack: Array<string>;
     timeline: string;
@@ -44,5 +45,13 @@ declare global {
     title: string;
     features: string[];
     description: string;
+  }
+
+  interface Testimonial {
+    name: string;
+    review: string;
+    organization?: string;
+    position?: string;
+    profile_image?: string;
   }
 }

@@ -8,6 +8,7 @@
     "slug": "apex-learn",
     "year": "2026",
     "role": "Mobile Developer",
+    "featured": true,
     "stack": [
       "React Native",
       "Expo",
@@ -65,6 +66,7 @@
       "jsPDF / html2canvas"
     ],
     "timeline": "4 weeks",
+    "featured": true,
     "summary": "Apex Masterclass is an end-to-end event management and digital admission platform built for high-impact masterclasses. Powered by Next.js and Prisma, the platform delivers secure tier-based ticket purchases, automated Flutterwave payment verification, real-time ticket generation with QR validation, and automated certificate dispatch.",
     "deepDive": "Apex Masterclass is designed to handle high-concurrency event registration and automated gate operations. The system features an imperative modal workflow for ticket acquisition and inspection, paired with a payment flow integrated with Flutterwave that verifies transactions using unique transaction references (`tx_ref`).\n\nUpon successful verification, the platform auto-generates digital tickets embedded with unique QR codes (`a_id` and `e_id`) for physical and virtual check-in verification via an internal `/verify` portal. For offline utility, attendees can export print-ready PDF passes created through an `html2canvas` and `jsPDF` render workflow.\n\nFor administrators, the platform includes dynamic ticket seat allocation tracking across Basic, Premium, and VIP tiers. To streamline post-event delivery, an automated certificate dispatch engine uses `puppeteer-core` and `@sparticuz/chromium` to generate personalized PDF certificates, complete with custom external package configurations in Next.js to eliminate process memory leaks on serverless AWS deployments.",
     "repo": "https://github.com/lexizuchenna",
@@ -79,6 +81,7 @@
     "slug": "mastra-fitness-agent",
     "year": "2025",
     "role": "Backend / AI Engineer",
+    "featured": true,
     "stack": [
       "TypeScript",
       "Mastra",
@@ -119,6 +122,7 @@
     "role": "Mobile Developer",
     "stack": ["React Native", "Firebase", "Expo"],
     "timeline": "1 week",
+    "featured": true,
     "summary": "A modular, reusable Authentication SDK for React Native (Expo) powered by Firebase. It supports both Headless Mode (logic only) and Default Mode (Pre-built UI), featuring Google Sign‑In, Email/Password auth, and persistent state management.",
     "deepDive": "A modular and reusable Authentication SDK designed specifically for React Native (Expo) applications, built on top of Firebase authentication services.\n\nThe SDK was architected to support two flexible integration modes: Headless Mode, which exposes authentication logic and state management for full UI control, and Default Mode, which provides ready-to-use, customizable authentication screens for rapid integration.\n\nIt includes support for Google Sign-In and Email/Password authentication, with persistent session handling to ensure seamless user experiences across app restarts.\n\nEmphasis was placed on clean architecture, reusability, and developer experience, allowing teams to easily integrate secure authentication while maintaining scalability and consistent state management across mobile applications.",
     "repo": "https://github.com/lexizuchenna/AuthSdk"
