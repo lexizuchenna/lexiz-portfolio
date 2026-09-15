@@ -2,7 +2,7 @@
   {
     "title": "Apex Learn",
     "category": "Mobile / EdTech Platform",
-    "description": "A cross-platform mobile learning application empowering students to discover structured courses, stream rich multimedia lessons, take interactive quizzes, and track academic progress in real time.",
+    "description": "A cross-platform EdTech ecosystem with dedicated student and tutor apps for discovering and publishing courses, delivering multimedia lessons, creating assessments, and supporting real-time classroom engagement.",
     "client": "",
     "link": "https://play.google.com/store/apps/details?id=org.apexthinkers.apexlearn",
     "slug": "apex-learn",
@@ -16,35 +16,12 @@
       "MMKV Storage",
       "Zustand",
       "Google Cloud OAuth",
-      "Stream Chat/Video",
+      "Stream Chat/Video/Call",
       "Expo Video / DRM"
     ],
     "timeline": "4 weeks",
-    "summary": "Apex Learn is a feature-rich student learning application engineered for seamless course delivery and high-engagement digital classrooms. Built with React Native and Expo, the app features robust DRM content protection, dynamic quiz evaluation, offline-aware lesson caching, and interactive live virtual sessions.",
-    "deepDive": "Apex Learn delivers a secure, immersive educational experience tailored for mobile learners. To safeguard proprietary educational assets, the platform implements hardware-backed content protection, enforcing OS-level screen capture/recording restrictions and secure tokenized HLS stream playback for video lessons.\n\nLearning continuity is powered by a custom Zustand state pipeline integrated with `react-native-mmkv-storage`, allowing real-time synchronization of lesson progress, quiz attempts, and video playback timestamps even across intermittent network connections. To prevent UI lag during multi-choice assessments and interactive exercises, layout rendering and timer counters are offloaded to native UI threads using reanimated state hooks.\n\nThe app features interactive live streaming and instant student-tutor messaging powered by Stream Video & Chat SDKs, alongside Google OAuth with PKCE flow for smooth, secure single sign-on across Android and iOS devices.",
-    "repo": "https://github.com/lexizuchenna"
-  },
-  {
-    "title": "Apex Learn (Tutors)",
-    "category": "Mobile / EdTech Platform",
-    "description": "A cross-platform educational application enabling instructors to build structured learning paths, draft interactive quizzes with real-time auto-save, and deliver rich multimedia lessons.",
-    "client": "",
-    "link": "https://play.google.com/store/apps/details?id=org.apexthinkers.apexlearn4tutors",
-    "slug": "apex-learn-4-tutors",
-    "year": "2026",
-    "role": "Mobile Developer",
-    "stack": [
-      "React Native",
-      "Expo",
-      "TypeScript",
-      "MMKV Storage",
-      "Zustand",
-      "Google Cloud OAuth",
-      "Stream Chat/Call"
-    ],
-    "timeline": "4 weeks",
-    "summary": "Apex Learn is a mobile EdTech platform designed to streamline classroom management and course publishing for educators. Built on React Native and Expo, the application features an offline-first quiz builder, rich-text lesson editing, debounced draft persistence, and secure authentication, providing a seamless user experience across iOS and Android.",
-    "deepDive": "Apex Learn is engineered as a mobile-first solution for course creation and student engagement. At the core of the instructor workspace is a dynamic Quiz & Assessment Builder powered by a custom Zustand store (`useQuizStore`) and `react-native-mmkv-storage`.\n\nTo ensure zero data loss while composing lengthy quizzes, a custom debounced auto-save strategy persists user progress to MMKV using unique `content_id` keys, allowing seamless restoration across sessions. To resolve complex mobile UX bottlenecks, nested gesture conflicts between native `ScrollView` components and WebView-based Rich Text Editors were solved by injecting touch event propagation controls directly into the web view layer.\n\nThe UI architecture adheres to custom design tokens, modular bottom sheet patterns, and responsive layout structures. For security and user management, the app integrates Google OAuth using PKCE and Web Client IDs, synchronized with Google Play App Signing SHA-1 fingerprints for production-grade authentication.",
+    "summary": "Apex Learn is a dual-app mobile learning platform built for both students and tutors. The student experience supports secure course discovery, multimedia lesson delivery, quizzes, progress tracking, and live engagement, while the tutor experience provides course publishing, rich lesson authoring, and resilient assessment creation. Built with React Native and Expo, the ecosystem combines offline-aware persistence, protected video playback, and real-time communication for a cohesive digital classroom.",
+    "deepDive": "Apex Learn unifies two complementary mobile experiences: a student app for learning and a tutor app for teaching. Students can discover structured courses, stream protected video lessons, complete interactive assessments, track their academic progress, and participate in live virtual sessions and direct conversations. Tutors can build learning paths, write rich multimedia lessons, and create quizzes from a dedicated instructor workspace, giving them the tools to publish and manage educational content from mobile devices.\n\nThe platform is designed for reliable learning and authoring outside ideal network conditions. A custom Zustand state pipeline, backed by `react-native-mmkv-storage`, persists lesson progress, quiz attempts, video timestamps, and tutor assessment drafts locally. The tutor-side quiz builder uses debounced auto-save with unique `content_id` keys to reduce the risk of data loss during longer authoring sessions, while the student experience restores learning state as connectivity changes.\n\nSecure delivery and responsive interaction are central to the student experience. Video lessons use tokenized HLS playback with device-level screen capture and recording restrictions to protect course content. Interactive assessments use native-thread animation state to keep timers and selection feedback smooth, and the rich-text authoring flow resolves nested `ScrollView` and WebView gesture conflicts through controlled touch-event propagation. Google OAuth with PKCE provides secure sign-in across iOS and Android, while Stream Chat, Video, and Call SDKs power live sessions and student-tutor communication.",
     "repo": "https://github.com/lexizuchenna"
   },
   {
@@ -171,5 +148,21 @@
     "timeline": "1 Month",
     "summary": "A responsive marketing website developed for a cleaning service company, focused on service visibility, brand credibility, and lead generation.",
     "deepDive": "Freshview Cleaning Service was developed as a modern business website aimed at clearly presenting services and strengthening online presence.\n\nUsing Next.js and React, the project delivers fast performance, responsive layouts, and a smooth browsing experience across all devices.\n\nThe build prioritised clean UI design, simple navigation, and scalable architecture, making it easy to update content and expand features as the business grows."
+  },
+  {
+    "title": "Reto Spotless",
+    "category": "Business Website / Cleaning & Environmental Services",
+    "description": "A responsive service website for Reto Spotless that presents domestic, commercial, specialist cleaning, waste management, and recycling services while guiding visitors towards tailored quote enquiries.",
+    "image": "/images/projects/retosplotless.png",
+    "client": "Reto Spotless (Reto Group Ltd)",
+    "link": "https://retospotless.co.uk/",
+    "slug": "reto-spotless",
+    "year": "2026",
+    "role": "Fullstack Developer",
+    "stack": ["Next.js", "React", "Tailwind CSS"],
+    "timeline": "1 Month",
+    "featured": true,
+    "summary": "Reto Spotless is a polished, mobile-first marketing platform for a UK cleaning and environmental services provider. Built with Next.js and React, the site makes a broad service offering easy to explore, builds trust through completed-work comparisons and testimonials, and gives prospective customers clear routes to request a personalised quote.",
+    "deepDive": "Reto Spotless was designed to translate a wide-ranging service offering into a clear, conversion-focused customer journey. The site separates domestic, commercial, specialist, and environmental services into scannable categories, covering regular and deep cleaning, end-of-tenancy work, office and industrial cleaning, property clearance, recycling, bin cleaning, and pressure washing. This structure lets visitors quickly understand the service that fits their space without navigating a dense catalogue.\n\nThe homepage combines a responsive hero carousel with distinct messages for domestic, commercial, and specialist cleaning, followed by clear service calls to action. Trust is reinforced with a dedicated portfolio that lets visitors compare before-and-after project views, as well as a testimonial carousel for customer feedback. The content and layouts are designed to work comfortably across mobile, tablet, and desktop screens while maintaining a professional, detail-oriented visual identity.\n\nA dedicated contact experience supports lead generation through phone and email contact options alongside a structured enquiry form for discussing cleaning requirements and requesting tailored quotes. Built with Next.js, React, and Tailwind CSS, the project uses reusable page sections and components to keep the marketing site maintainable as services, project examples, and business content evolve."
   }
 ]
