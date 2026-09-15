@@ -110,7 +110,7 @@
     "description": "A react native App that displays list of crypto currencies with a description page",
     "client": "",
     "link": "https://github.com/lexizuchenna/hng-mobile-4/releases/tag/v1.0.0",
-    "slug": "hng-auth-sdk",
+    "slug": "crypto-wallet",
     "year": "2025",
     "role": "Mobile Developer",
     "stack": ["React Native", "Expo"],
